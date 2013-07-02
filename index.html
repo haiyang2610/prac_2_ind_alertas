@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;
+charset=utf-8">
+<meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    // Espere a que PhoneGap se inicie
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap esta listo
+    
+    function onDeviceReady() {
+        // vacio el evento cuando phonegap esta listo
+    }
+	
+	// Muestra un cuadro de dialogo personalizado.
+    //
+    function showAlert() {
+        navigator.notification.alert(
+        'Eres el ganador!',     // mensaje (message)
+        'Game Over',            // titulo (title)
+        'Cerrar'                // nombre del botón (buttonName)
+        );
+    }
+	
+	
+	//aqui estan las las funcione que va a realizar 
+	
+    // Reproduce tres beeps
+    //
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibra dos segundos
+    //
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+
+</script>
+</head>
+
+<body>
+	<!-- a hace referencia a un enlace-->
+	<p><a href="#" onclick="showAlert(); return false;">Mostrar cuadro de dialogo</a></p>
+    <p><a href="#" onclick="playBeep(); return false;">Reproducir beep</a></p>
+    <p><a href="#" onclick="vibrate(); return false;">Vibrar</a></p>
+</body>
+</html>
